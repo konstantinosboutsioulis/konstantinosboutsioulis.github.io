@@ -8,6 +8,8 @@ categories:
     - SharePoint Online
 tags:
     - SharePoint Online
+
+comments: false
 ---
 
 In today's article we will see how to delete a SharePoint site using PowerShell
