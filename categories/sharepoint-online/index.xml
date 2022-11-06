@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SharePoint Online on Konstantinos Boutsioulis</title><link>https://konstantinosboutsioulis.github.io/categories/sharepoint-online/</link><description>Recent content in SharePoint Online on Konstantinos Boutsioulis</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 06 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://konstantinosboutsioulis.github.io/categories/sharepoint-online/index.xml" rel="self" type="application/rss+xml"/><item><title>Delete And Restore SharePoint Site Using PowerShell In SharePoint Online</title><link>https://konstantinosboutsioulis.github.io/p/delete-and-restore-sharepoint-site-using-powershell-in-sharepoint-online/</link><pubDate>Sun, 06 Nov 2022 00:00:00 +0000</pubDate><guid>https://konstantinosboutsioulis.github.io/p/delete-and-restore-sharepoint-site-using-powershell-in-sharepoint-online/</guid><description>&lt;img src="https://konstantinosboutsioulis.github.io/p/delete-and-restore-sharepoint-site-using-powershell-in-sharepoint-online/cover.png" alt="Featured image of post Delete And Restore SharePoint Site Using PowerShell In SharePoint Online" />&lt;p>In today&amp;rsquo;s article we will see how to delete a SharePoint site using PowerShell&lt;/p>
+&lt;p>It is a very simple process in which by running a simple PowerShell we delete the site&lt;/p>
+&lt;p>To run the command you need administrator privileges&lt;/p>
+&lt;p>As you can see from the SharePoint admin center in the active sites are both sites with strange titles asdasdsadasdasd and cdscsdcsdcsdcsdcsd which we want to delete because they are test pages&lt;/p>
+&lt;p>&lt;img src="https://konstantinosboutsioulis.github.io/p/delete-and-restore-sharepoint-site-using-powershell-in-sharepoint-online/a1.png"
+width="1024"
+height="298"
+srcset="https://konstantinosboutsioulis.github.io/p/delete-and-restore-sharepoint-site-using-powershell-in-sharepoint-online/a1_huea28a55d7eac972ff683997ab34f5f07_61505_480x0_resize_box_3.png 480w, https://konstantinosboutsioulis.github.io/p/delete-and-restore-sharepoint-site-using-powershell-in-sharepoint-online/a1_huea28a55d7eac972ff683997ab34f5f07_61505_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="343"
+data-flex-basis="824px"
+>&lt;/p>
+&lt;p>Locate the sites we want to delete and execute the following command&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">#Initialisation of Parameters
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$admin=&amp;#34;https://mytenant-admin.sharepoint.com&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">#Open Connection with SharePoint Online
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Connect-SPOService -Url $admin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">#Delete selected Sites
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Remove-SPOSite -Identity https://mytenant.sharepoint.com/sites/asdasdsadasdasd -NoWait
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Remove-SPOSite -Identity https://mytenant.sharepoint.com/sites/cdscsdcsdcsdcsdcsd -NoWait
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://konstantinosboutsioulis.github.io/p/delete-and-restore-sharepoint-site-using-powershell-in-sharepoint-online/a2.png"
+width="971"
+height="830"
+srcset="https://konstantinosboutsioulis.github.io/p/delete-and-restore-sharepoint-site-using-powershell-in-sharepoint-online/a2_huebdfe57cab43d5c7042c43b898343451_76170_480x0_resize_box_3.png 480w, https://konstantinosboutsioulis.github.io/p/delete-and-restore-sharepoint-site-using-powershell-in-sharepoint-online/a2_huebdfe57cab43d5c7042c43b898343451_76170_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="116"
+data-flex-basis="280px"
+>&lt;/p>
+&lt;p>Here it should be noted that the deletion moves the site to deleted and does not delete it, however, so from the deleted site can be restored within the time frame you have set&lt;/p>
+&lt;p>Additionally it should be noted that the site should not be asssociated with 365 group because in this case you will get an error which will not allow you to delete the site before you delete the group&lt;/p>
+&lt;p>This site that was not deleted was done since the corresponding group was created in Teams&lt;/p>
+&lt;p>In case you wish to restore the sites you will again need to run the following PowerShell with administrator privileges to restore them to their original pre-deletion state&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">#Initialisation of Parameters
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$admin=&amp;#34;https://mytenant-admin.sharepoint.com&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">#Open Connection with SharePoint Online
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Connect-SPOService -Url $admin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">#Restore Deleted Sites from the Recucle Bin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Restore-SPODeletedSite -Identity https://mytenant.sharepoint.com/sites/asdasdsadasdasd -NoWait
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Restore-SPODeletedSite -Identity https://mytenant.sharepoint.com/sites/cdscsdcsdcsdcsdcsd -NoWait
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>More Information about deleting sites can be obtained from the official Microsoft site at&lt;/p>
+&lt;p>&lt;a class="link" href="https://learn.microsoft.com/en-us/powershell/module/sharepoint-online/remove-sposite?view=sharepoint-ps&amp;amp;WT.mc_id=M365-MVP-5004210" target="_blank" rel="noopener"
+>https://learn.microsoft.com/en-us/powershell/module/sharepoint-online/remove-sposite?view=sharepoint-ps&amp;WT.mc_id=M365-MVP-5004210&lt;/a>&lt;/p></description></item></channel></rss>
