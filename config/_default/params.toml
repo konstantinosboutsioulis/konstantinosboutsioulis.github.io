@@ -12,8 +12,8 @@ published = "Jan 02, 2006"
 lastUpdated = "Jan 02, 2006 15:04 MST"
 
 [sidebar]
-emoji = "🍥"
-subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+subtitle = "Microsoft Most Valuable Professional M365 Appas & Services"
 
 [sidebar.avatar]
 enabled = true
@@ -121,8 +121,8 @@ path = ""
 lang = ""
 
 [comments.cactus]
-defaultHomeserverUrl = "https://matrix.cactus.chat:8448"
-serverName = "cactus.chat"
+defaultHomeserverUrl = ""
+serverName = ""
 siteName = ""
 
 [comments.giscus]
